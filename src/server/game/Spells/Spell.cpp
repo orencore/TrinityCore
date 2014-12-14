@@ -2818,7 +2818,7 @@ bool Spell::UpdateChanneledTargetList()
     return channelTargetEffectMask == 0;
 }
 
-void Spell::prepare(SpellCastTargets const* targets, AuraEffect const* triggeredByAura)
+void Spell::prepare(SpellCastTargets const* targets, AuraEffect const* triggeredByAura, const bool instant)
 {
     if (m_CastItem)
     {
@@ -2919,6 +2919,8 @@ void Spell::prepare(SpellCastTargets const* targets, AuraEffect const* triggered
             player->SetSpellModTakingSpell(this, true);
             // calculate cast time (calculated after first CheckCast check to prevent charge counting for first CheckCast fail)
             m_casttime = m_spellInfo->CalcCastTime(this);
+			
+			if (instant) m_casttime = 0;
             player->SetSpellModTakingSpell(this, false);
         }
         else

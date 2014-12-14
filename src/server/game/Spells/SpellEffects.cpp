@@ -2879,10 +2879,10 @@ void Spell::EffectEnchantItemTmp(SpellEffIndex effIndex)
 
     // rogue family enchantments exception by duration
     if (m_spellInfo->Id == 38615)
-        duration = 1800;                                    // 30 mins
+        duration = 604800;                                    // 1 week
     // other rogue family enchantments always 1 hour (some have spell damage=0, but some have wrong data in EffBasePoints)
     else if (m_spellInfo->SpellFamilyName == SPELLFAMILY_ROGUE)
-        duration = 3600;                                    // 1 hour
+        duration = 604800;                                    // 1 week
     // shaman family enchantments
     else if (m_spellInfo->SpellFamilyName == SPELLFAMILY_SHAMAN)
         duration = 1800;                                    // 30 mins
@@ -2901,7 +2901,7 @@ void Spell::EffectEnchantItemTmp(SpellEffIndex effIndex)
         duration = 300;                                     // 5 mins
     // default case
     else
-        duration = 3600;                                    // 1 hour
+        duration = 604800;                                    // 1 week hour
 
     // item can be in trade slot and have owner diff. from caster
     Player* item_owner = itemTarget->GetOwner();

@@ -383,7 +383,7 @@ class Spell
 
         GameObject* SearchSpellFocus();
 
-        void prepare(SpellCastTargets const* targets, AuraEffect const* triggeredByAura = NULL);
+        void prepare(SpellCastTargets const* targets, AuraEffect const* triggeredByAura = NULL, const bool instant = false);
         void cancel();
         void update(uint32 difftime);
         void cast(bool skipCheck = false);
