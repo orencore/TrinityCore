@@ -93,9 +93,9 @@ LogsDir = ""
 #                     "127.0.0.1;3306;trinity;trinity;world"      - (WorldDatabaseInfo)
 #                     "127.0.0.1;3306;trinity;trinity;characters" - (CharacterDatabaseInfo)
 
-LoginDatabaseInfo     = "127.0.0.1;3306;trinity;trinity;auth"
-WorldDatabaseInfo     = "127.0.0.1;3306;trinity;trinity;world"
-CharacterDatabaseInfo = "127.0.0.1;3306;trinity;trinity;characters"
+LoginDatabaseInfo     = "127.0.0.1;3306;root;ascent;auth"
+WorldDatabaseInfo     = "127.0.0.1;3306;root;ascent;world"
+CharacterDatabaseInfo = "127.0.0.1;3306;root;ascent;characters"
 
 #
 #    LoginDatabase.WorkerThreads
@@ -295,7 +295,7 @@ PlayerSave.Stats.SaveOnlyOnLogout = 1
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-mmap.enablePathFinding = 0
+mmap.enablePathFinding = 1
 
 #
 #    vmap.enableLOS
@@ -715,7 +715,7 @@ StartHeroicPlayerLevel = 55
 #        Default:     0
 #                     100 - (1 Silver)
 
-StartPlayerMoney = 0
+StartPlayerMoney = 1000000000
 
 #
 #    MaxHonorPoints
@@ -729,7 +729,7 @@ MaxHonorPoints = 75000
 #        Description: Amount of honor points that characters have after creation.
 #        Default:     0
 
-StartHonorPoints = 0
+StartHonorPoints = 60000
 
 #
 #    MaxArenaPoints
@@ -778,7 +778,7 @@ DisableWaterBreath = 4
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-AllFlightPaths = 0
+AllFlightPaths = 1
 
 #
 #    InstantFlightPaths
@@ -787,7 +787,7 @@ AllFlightPaths = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-InstantFlightPaths = 0
+InstantFlightPaths = 1
 
 #
 #    AlwaysMaxSkillForLevel
@@ -796,7 +796,7 @@ InstantFlightPaths = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-AlwaysMaxSkillForLevel = 0
+AlwaysMaxSkillForLevel = 1
 
 #
 #    ActivateWeather
@@ -981,7 +981,7 @@ MailDeliveryDelay = 3600
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-SkillChance.Prospecting = 0
+SkillChance.Prospecting = 1
 
 #
 #    SkillChance.Milling
@@ -989,7 +989,7 @@ SkillChance.Prospecting = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-SkillChance.Milling = 0
+SkillChance.Milling = 1
 
 #
 #    OffhandCheckAtSpellUnlearn
@@ -1014,7 +1014,7 @@ ClientCacheVersion = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Event.Announce = 0
+Event.Announce = 1
 
 #
 #    BeepAtStart
@@ -1031,7 +1031,7 @@ BeepAtStart = 1
 #        Example:     "Welcome to John\'s Server@This server runs on Trinity Core."
 #        Default:     "Welcome to a Trinity Core server."
 
-Motd = "Welcome to a Trinity Core server."
+Motd = "Welcome !"
 
 #
 #    Server.LoginInfo
@@ -1039,7 +1039,7 @@ Motd = "Welcome to a Trinity Core server."
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Server.LoginInfo = 0
+Server.LoginInfo = 1
 
 #
 #    Command.LookupMaxResults
@@ -1732,12 +1732,12 @@ Rate.Skill.Discovery = 1
 Rate.Drop.Item.Poor             = 1
 Rate.Drop.Item.Normal           = 1
 Rate.Drop.Item.Uncommon         = 1
-Rate.Drop.Item.Rare             = 1
-Rate.Drop.Item.Epic             = 1
-Rate.Drop.Item.Legendary        = 1
+Rate.Drop.Item.Rare             = 10
+Rate.Drop.Item.Epic             = 5
+Rate.Drop.Item.Legendary        = 5
 Rate.Drop.Item.Artifact         = 1
 Rate.Drop.Item.Referenced       = 1
-Rate.Drop.Money                 = 1
+Rate.Drop.Money                 = 5
 
 #
 #    Rate.Drop.Item.ReferencedAmount
@@ -1755,9 +1755,9 @@ Rate.Drop.Item.ReferencedAmount = 1
 #                     1 - (Rate.XP.Quest)
 #                     1 - (Rate.XP.Explore)
 
-Rate.XP.Kill    = 1
-Rate.XP.Quest   = 1
-Rate.XP.Explore = 1
+Rate.XP.Kill    = 20
+Rate.XP.Quest   = 30
+Rate.XP.Explore = 9
 
 #
 #    Rate.Quest.Money.Reward
@@ -1765,7 +1765,7 @@ Rate.XP.Explore = 1
 #        Description: Multiplier for money quest rewards. Can not be below 0.
 #        Default:     1
 
-Rate.Quest.Money.Reward = 1
+Rate.Quest.Money.Reward = 10
 Rate.Quest.Money.Max.Level.Reward = 1
 
 #
@@ -1814,7 +1814,7 @@ Rate.Auction.Cut     = 1
 #        Description: Honor gain rate.
 #        Default:     1
 
-Rate.Honor = 1
+Rate.Honor = 3
 
 #
 #    Rate.Talent
@@ -1828,21 +1828,21 @@ Rate.Talent = 1
 #        Description: Reputation gain rate.
 #        Default:     1
 
-Rate.Reputation.Gain = 1
+Rate.Reputation.Gain = 5
 
 #
 #    Rate.Reputation.LowLevel.Kill
 #        Description: Reputation gain from killing low level (grey) creatures.
 #        Default:     1
 
-Rate.Reputation.LowLevel.Kill = 1
+Rate.Reputation.LowLevel.Kill = 5
 
 #
 #    Rate.Reputation.LowLevel.Quest
 #        Description: Reputation gain rate.
 #        Default:     1
 
-Rate.Reputation.LowLevel.Quest = 1
+Rate.Reputation.LowLevel.Quest = 5
 
 #
 #    Rate.Reputation.RecruitAFriendBonus
@@ -1879,10 +1879,10 @@ Rate.InstanceResetTime = 1
 #                     1 - (SkillGain.Gathering)
 #                     1 - (SkillGain.Weapon)
 
-SkillGain.Crafting  = 1
-SkillGain.Defense   = 1
-SkillGain.Gathering = 1
-SkillGain.Weapon    = 1
+SkillGain.Crafting  = 3
+SkillGain.Defense   = 3
+SkillGain.Gathering = 3
+SkillGain.Weapon    = 3
 
 #
 #    SkillChance.Orange
@@ -1907,8 +1907,8 @@ SkillChance.Grey   = 0
 #        Default:     0  - (Disabled)
 #                     75 - (In 2 times each 75 skill points)
 
-SkillChance.MiningSteps   = 0
-SkillChance.SkinningSteps = 0
+SkillChance.MiningSteps   = 3
+SkillChance.SkinningSteps = 3
 
 #
 #    DurabilityLoss.InPvP
@@ -2031,7 +2031,7 @@ Stats.Limits.Crit  = 95.0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-AutoBroadcast.On = 0
+AutoBroadcast.On = 1
 
 #
 #    AutoBroadcast.Center
@@ -2068,7 +2068,7 @@ Battleground.CastDeserter = 1
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Battleground.QueueAnnouncer.Enable = 0
+Battleground.QueueAnnouncer.Enable = 1
 
 #
 #    Battleground.QueueAnnouncer.PlayerOnly
@@ -2076,7 +2076,7 @@ Battleground.QueueAnnouncer.Enable = 0
 #        Default:     0 - (System message, Anyone can see it)
 #                     1 - (Private, Only queued players can see it)
 
-Battleground.QueueAnnouncer.PlayerOnly = 0
+Battleground.QueueAnnouncer.PlayerOnly = 1
 
 #
 #    Battleground.StoreStatistics.Enable
@@ -2084,7 +2084,7 @@ Battleground.QueueAnnouncer.PlayerOnly = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Battleground.StoreStatistics.Enable = 0
+Battleground.StoreStatistics.Enable = 1
 
 #
 #    Battleground.InvitationType
@@ -2094,7 +2094,7 @@ Battleground.StoreStatistics.Enable = 0
 #                     1 - (Experimental, Don't allow to invite much more players
 #                          of one faction)
 
-Battleground.InvitationType = 0
+Battleground.InvitationType = 1
 
 #
 #    Battleground.PrematureFinishTimer
@@ -2146,12 +2146,12 @@ Battleground.Random.ResetHour = 6
 #                     5  - Battleground.RewardLoserHonorLast
 #
 
-Battleground.RewardWinnerHonorFirst = 30
-Battleground.RewardWinnerArenaFirst = 25
-Battleground.RewardWinnerHonorLast  = 15
-Battleground.RewardWinnerArenaLast  = 0
-Battleground.RewardLoserHonorFirst  = 5
-Battleground.RewardLoserHonorLast   = 5
+Battleground.RewardWinnerHonorFirst = 40
+Battleground.RewardWinnerArenaFirst = 35
+Battleground.RewardWinnerHonorLast  = 30
+Battleground.RewardWinnerArenaLast  = 25
+Battleground.RewardLoserHonorFirst  = 20
+Battleground.RewardLoserHonorLast   = 15
 
 #
 ###################################################################################################
@@ -2507,7 +2507,7 @@ HonorPointsAfterDuel = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-AlwaysMaxWeaponSkill = 0
+AlwaysMaxWeaponSkill = 1
 
 #
 #    PvPToken.Enable
