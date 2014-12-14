@@ -2,6 +2,11 @@ language: cpp
 compiler:
   - clang
 
+branches:
+  only:
+    - master
+    - 4.3.4
+
 git:
   depth: 1
 
