@@ -8464,6 +8464,18 @@ void Player::CastItemCombatSpell(Unit* target, WeaponAttackType attType, uint32 
 void Player::CastItemUseSpell(Item* item, SpellCastTargets const& targets, uint8 cast_count, uint32 glyphIndex)
 {
     ItemTemplate const* proto = item->GetTemplate();
+	
+	bool instant = false;
+	if ((proto->Class == ITEM_CLASS_GLYPH) ||
+		(proto->Class == ITEM_CLASS_CONSUMABLE && (
+		proto->SubClass == ITEM_SUBCLASS_ITEM_ENHANCEMENT ||
+		proto->SubClass == ITEM_SUBCLASS_CONSUMABLE_OTHER)) ||
+		(proto->Class == ITEM_CLASS_TRADE_GOODS && (
+		proto->SubClass == ITEM_SUBCLASS_ARMOR_ENCHANTMENT ||
+		proto->SubClass == ITEM_SUBCLASS_WEAPON_ENCHANTMENT ||
+		proto->SubClass == ITEM_SUBCLASS_ENCHANTING)))
+		instant = true;
+
     // special learning case
     if (proto->Spells[0].SpellId == 483 || proto->Spells[0].SpellId == 55884)
     {
@@ -8482,7 +8494,7 @@ void Player::CastItemUseSpell(Item* item, SpellCastTargets const& targets, uint8
         spell->m_CastItem = item;
         spell->m_cast_count = cast_count;                   //set count of casts
         spell->SetSpellValue(SPELLVALUE_BASE_POINT0, learning_spell_id);
-        spell->prepare(&targets);
+        spell->prepare(&targets, NULL, instant)
         return;
     }
 
@@ -8513,7 +8525,7 @@ void Player::CastItemUseSpell(Item* item, SpellCastTargets const& targets, uint8
         spell->m_CastItem = item;
         spell->m_cast_count = cast_count;                   // set count of casts
         spell->m_glyphIndex = glyphIndex;                   // glyph index
-        spell->prepare(&targets);
+        spell->prepare(&targets, NULL, instant);
 
         ++count;
     }
