@@ -14,6 +14,9 @@ set(scripts_STAT_SRCS
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}
 	Custom/proff.cpp
+	Custom/Transmog/Transmogrification.cpp
+	Custom/Transmog/Transmogrification.h
+	Custom/Transmog/Transmogrifier.cpp
 )
 
 message("  -> Prepared: Custom")

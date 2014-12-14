@@ -18,9 +18,6 @@
 #include "ScriptLoader.h"
 #include "World.h"
 
-//Custom Scripts
-void AddSC_Professions_NPC();
-
 // spells
 void AddSC_deathknight_spell_scripts();
 void AddSC_druid_spell_scripts();
@@ -1418,7 +1415,7 @@ void AddBattlegroundScripts()
 
 #ifdef SCRIPTS
 /* This is where custom scripts' loading functions should be declared. */
-
+void AddSC_Professions_NPC();
 void AddSC_PWS_Transmogrification();
 void AddSC_CS_Transmogrification();
 #endif
@@ -1427,7 +1424,6 @@ void AddCustomScripts()
 {
 #ifdef SCRIPTS
 	AddSC_Professions_NPC();
-
     AddSC_PWS_Transmogrification();
     AddSC_CS_Transmogrification();
 #endif
